@@ -1,0 +1,36 @@
+.datetimepicker-curmonth {
+    text-align: center;
+    cursor: pointer;
+    background: #ddd;
+    font-weight: bold;
+  }
+  
+  .datetimepicker-curmonth:hover {
+    background: #ccf;
+  }
+  
+  .datetimepicker-not-curmonth {
+    text-align: center;
+    cursor: pointer;
+    background: #eee;
+  }
+  
+  .datetimepicker-not-curmonth:hover {
+    background: #ccf;
+  }
+
+  .datetimepicker-header {
+    position: relative;
+    background: rgb(54, 186, 196);
+    border-radius: 5px;
+  }
+  
+  .datetimepicker-header-close {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
