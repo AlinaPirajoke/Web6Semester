@@ -5,7 +5,7 @@
     <div class="middleDiv">
         <div class="form">
             <h1>Пройдите тест по основам дискретной математики!<br></h1>
-            <form method=post action="/test">
+            <form method='POST' action="./test">
                 @csrf
                 <div>
                     <p>Каково количество различных перестановок букв в слове “MATH”?</p>
@@ -37,14 +37,14 @@
                 <div>
                     <p>Введите вашу группу</p>
                     <select name="group" size=1>
-                        <option value=1>ИС/б-21-1-о</option>
-                        <option value=2>ИС/б-21-2-о</option>
-                        <option value=3>ИС/б-21-3-о</option>
-                        <option value=4>ПИ/б-21-1-о</option>
-                        <option value=5>ИС/б-20-1-о</option>
-                        <option value=6>ИС/б-20-2-о</option>
-                        <option value=7>ИС/б-20-3-о</option>
-                        <option value=8>ПИ/б-20-1-о</option>
+                        <option value="ИС/б-21-1-о">ИС/б-21-1-о</option>
+                        <option value="ИС/б-21-2-о">ИС/б-21-2-о</option>
+                        <option value="ИС/б-21-3-о">ИС/б-21-3-о</option>
+                        <option value="ПИ/б-21-1-о">ПИ/б-21-1-о</option>
+                        <option value="ИС/б-20-1-о">ИС/б-20-1-о</option>
+                        <option value="ИС/б-20-2-о">ИС/б-20-2-о</option>
+                        <option value="ИС/б-20-3-о">ИС/б-20-3-о</option>
+                        <option value="ПИ/б-20-1-о">ПИ/б-20-1-о</option>
                     </select>
                 </div>
                 <div class="def_margin_top">

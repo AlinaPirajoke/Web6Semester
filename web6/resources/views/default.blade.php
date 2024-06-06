@@ -35,6 +35,16 @@
             <div style="float:left" class="headerText">
                 <li class="headerPage"><a href="./test">Тест по основам дискретной математики</a></li>
                 <li class="headerPage"><a href="./history">История</a></li>
+                <li class="headerPage"><a href="./guestBookUpload">Гостевая книга</a></li>
+            </div>
+            <div style="float:left" class="headerText">
+                <li class="headerPage"><a href="./guestBook">Записи гостевой книги</a></li>
+                <li class="headerPage"><a href="./testAnswer">Результаты теста</a></li>
+                <li class="headerPage"><a href="./blog">Блог</a></li>
+            </div>
+            <div style="float:left" class="headerText">
+                <li class="headerPage"><a href="./blogUpload">Блог редактор</a></li>
+                <!-- <li class="headerPage"><a href="./blogDownload">Блог загрузка</a></li> -->
             </div>
         </ol>
     </nav>

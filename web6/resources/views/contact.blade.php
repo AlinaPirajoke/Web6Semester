@@ -5,7 +5,7 @@
     <div class="middleDiv">
         <div class="form">
             <h1>Оставьте контакты о себе!</h1>
-            <form method=post action="/contact">
+            <form method=post action="./contact">
                 @csrf
                 <div>
                     <p>Ваше ФИО</p>
