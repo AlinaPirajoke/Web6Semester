@@ -1,7 +1,6 @@
 @extends("default")
 
 @section("content")
-<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/app.css') }}">
 <div class="HeaderTest" align=center>
     <h2>Ответы на тест</h2>
 </div>

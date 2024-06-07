@@ -252,10 +252,9 @@ a:active {
 }
 
 .HeaderTest {
-    background-color: #36bac4;
     padding: 20px;
     text-align: center;
-    color: #ffffff;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -299,5 +298,152 @@ a:active {
 
 .answerTest td {
     color: #333333;
+}
+
+
+.namingIsMyMiddleNameForm {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.blogInputForm label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.blogInputForm p {
+    margin: 10px 0;
+}
+
+.blogInputForm input[type="text"], 
+.blogInputForm input[type="file"], 
+.blogInputForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.blogInputForm input[type="submit"] {
+    background-color: #36bac4;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.blogInputForm input[type="submit"]:hover {
+    background-color: #2d9aa8;
+}
+
+.namingIsMyMiddleNameTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.namingIsMyMiddleNameTable th, 
+.namingIsMyMiddleNameTable td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.namingIsMyMiddleNameTable th {
+    background-color: #36bac4;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.namingIsMyMiddleNameTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.namingIsMyMiddleNameTable tr:hover {
+    background-color: #e2e2e2;
+}
+
+.namingIsMyMiddleNamePagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.namingIsMyMiddleNamePagination .pagination {
+    display: inline-block;
+}
+
+.namingIsMyMiddleNamePagination .pagination li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.namingIsMyMiddleNamePagination .pagination li a {
+    color: #36bac4;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid #36bac4;
+    border-radius: 4px;
+}
+
+.namingIsMyMiddleNamePagination .pagination li a:hover {
+    background-color: #36bac4;
+    color: #ffffff;
+}
+
+
+.blogInputForm {
+    text-align: center;
+}
+
+.blogInputForm label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.blogInputForm input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.blogInputForm input[type="submit"] {
+    background-color: #36bac4;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.blogInputForm input[type="submit"]:hover {
+    background-color: #2d9aa8;
+}
+
+.blogInputForm a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #36bac4;
+    font-size: 16px;
+    border: 1px solid #36bac4;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.blogInputForm a:hover {
+    background-color: #36bac4;
+    color: #ffffff;
 }
 /*# sourceMappingURL=theme2.css.map */
