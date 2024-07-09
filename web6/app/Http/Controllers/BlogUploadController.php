@@ -27,20 +27,22 @@ class BlogUploadController extends Controller
         $file = fopen(storage_path("app/public/{$path}"), "r");
 
         $header = fgetcsv($file);
+
+        BlogModel::truncate();
         while ($row = fgetcsv($file)) {
             $data = array_combine($header, $row);
 
             $post = new BlogModel([
                 'title' => $data['title'],
-                'content' => $data['message'],
+                'message' => $data['message'],
             ]);
 
             if (!empty($data['image_base64'])) {
                 $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data['image_base64']));
                 $imageName = time() . '_' . Str::uuid() . '.jpg';
-                $imagePath = public_path('storage/blog_images/' . $imageName);
-                file_put_contents($imagePath, $imageData);
-                $post->image = $imageName;
+                $imagePath = public_path('uploads/images/' . $imageName);
+                // file_put_contents($imagePath, $imageData);
+                $post->image = $data['image_base64'];
             }
 
             $post->created_at = \Carbon\Carbon::parse($data['created_at']);
@@ -65,6 +67,7 @@ class BlogUploadController extends Controller
         $columns = ['title', 'message', 'created_at', 'image_base64'];
 
         $callback = function () use ($blogPosts, $columns) {
+            // dd($blogPosts);
             $file = fopen('php://output', 'w');
             fputcsv($file, $columns);
 
@@ -74,17 +77,18 @@ class BlogUploadController extends Controller
                     $imageData = base64_encode(file_get_contents($imagePath));
                     $posts->image_base64 = 'data:image/jpeg;base64,' . $imageData;
                 }
-                fputcsv($file, [$posts->title, $posts->content, $posts->created_at, $posts->image_base64]);
+                fputcsv($file, [$posts->title, $posts->message, $posts->created_at, $posts->image_base64]);
             }
             fclose($file);
         };
         $posts = BlogModel::all();;
         $callback = function () use ($posts, $columns) {
+            // dd($posts);
             $file = fopen('php://output', 'w');
             fputcsv($file, $columns);
 
             foreach ($posts as $post) {
-                fputcsv($file, [$post->title, $post->content, $post->created_at, $post->image]);
+                fputcsv($file, [$post->title, $post->message, $post->created_at, $post->image]);
             }
 
             fclose($file);

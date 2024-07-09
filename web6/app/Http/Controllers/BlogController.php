@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BlogModel;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -25,10 +26,19 @@ class BlogController extends Controller
         $posts->message = $request->message;
 
         if ($request->hasFile('image')) {
-            $imageName = $request->file('image')->getClientOriginalName();
-            $imageName = preg_replace('/\s+/', '_', $imageName);
-            $imageName = time() . '_' . $imageName;
-            $request->file('image')->storeAs('public\blog_images', $imageName);
+            // $imageName = $request->file('image')->getClientOriginalName();
+            // $imageName = preg_replace('/\s+/', '_', $imageName);
+            // $imageName = time() . '_' . $imageName;
+            // $request->file('image')->storeAs('public\blog_images', $imageName);
+            // Получение файла
+            $image = $request->file('image');
+
+        // Определение пути и имени файла
+            $destinationPath = 'uploads/images';
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+
+        // Сохранение файла
+            $image->move(public_path($destinationPath), $imageName);
             $posts->image = $imageName;
         }
         $posts->save();

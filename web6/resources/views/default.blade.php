@@ -35,10 +35,10 @@
             <div style="float:left" class="headerText">
                 <li class="headerPage"><a href="./test">Тест по основам дискретной математики</a></li>
                 <li class="headerPage"><a href="./history">История</a></li>
-                <li class="headerPage"><a href="./guest_book/main">Гостевая книга</a></li>
+                <li class="headerPage"><a href="./guest_book_main">Гостевая книга</a></li>
             </div>
             <div style="float:left" class="headerText">
-                <li class="headerPage"><a href="./guest_book/upload">Записи гостевой книги</a></li>
+                <li class="headerPage"><a href="./guest_book_upload">Записи гостевой книги</a></li>
                 <li class="headerPage"><a href="./testAnswer">Результаты теста</a></li>
                 <li class="headerPage"><a href="./blog">Блог</a></li>
             </div>

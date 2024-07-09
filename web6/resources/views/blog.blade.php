@@ -38,7 +38,7 @@
                 <td>{{ $posts->message }}</td>
                 <td>
                     @if ($posts->image)
-                        <img src="{{ Storage::url('blog_images/' . $posts->image) }}" alt="{{ $posts->title }}" style="max-width: 40%;">
+                        <img src="{{ asset('uploads/images/' . $posts->image) }}" alt="{{ $posts->title }}" style="max-width: 40%;">
                     @endif
                 </td>
             </tr>
