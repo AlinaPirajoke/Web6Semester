@@ -1,22 +1,36 @@
 @extends("default")
 
 @section("content")
-    <script src="scripts/history.js"></script>
-    <h2>История за все время</h2>
-    <table id="sessionHistory">
+<br />
+<div class="text">
+    <h1>Статистика посещений</h1>
+</div>
+<br />
+<table class="namingIsMyMiddleNameTable">
+    <thead>
         <tr>
-            <th>Страница-1</th>
-            <th>Количество посещений</th>
+            <th>Дата и время посещения</th>
+            <th>Web-страница посещения</th>
+            <th>IP-адрес компьютера посетителя</th>
+            <th>Имя хоста компьютера посетителя</th>
+            <th>Название браузера, который использовал посетитель</th>
         </tr>
-        <!-- Таблица для истории текущего сеанса будет здесь -->
-    </table>
+    </thead>
+    <tbody>
 
-    <h2>История текущего сеанса</h2>
-    <table id="allTimeHistory">
+        @foreach($statistics as $statistic)
         <tr>
-            <th>Страница-1</th>
-            <th>Количество посещений</th>
+            <td>{{ $statistic->created_at->format('d.m.Y H:i') }}</td>
+            <td>{{ $statistic->page }}</td>
+            <td>{{ $statistic->ip }}</td>
+            <td>{{ $statistic->host_name }}</td>
+            <td>{{ $statistic->browser_name }}</td>
         </tr>
-        <!-- Таблица для истории за все время будет здесь -->
-    </table>
+        @endforeach
+    </tbody>
+</table>
+
+<div class="namingIsMyMiddleNamePagination">
+    {{ $statistics->links() }}
+</div>
 @endsection
