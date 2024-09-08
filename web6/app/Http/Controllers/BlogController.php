@@ -16,6 +16,8 @@ class BlogController extends Controller
     }
 
     public function store(Request $request) {
+        dd($request);
+
         $request->validate([
             'title' => 'required',
             'image' => 'nullable|image|mimes:jpg|max:2048',
@@ -40,7 +42,7 @@ class BlogController extends Controller
 
         // Сохранение файла
             $image->move(public_path($destinationPath), $imageName);
-            $posts->image = $imageName;
+            $posts->image = Storage::url('blog_images/' . $imageName);
         }
         $posts->save();
 
@@ -54,7 +56,7 @@ class BlogController extends Controller
             Storage::delete('public\blog_images\\'. $blog->image);
         }
 
-        $blog->delete();
+        $blog->forceDelete();
 
         return back()->with('success', 'Запись успешно удалена');
     }
@@ -74,13 +76,12 @@ class BlogController extends Controller
         $blog = BlogModel::query()->whereId($blogId)->first();
         $image = null;
 
-
         if ($request->hasFile('image')) {
             $imageName = $request->file('image')->getClientOriginalName();
             $imageName = preg_replace('/\s+/', '_', $imageName);
             $imageName = time() . '_' . $imageName;
             $request->file('image')->storeAs('public\blog_images', $imageName);
-            $image = $imageName;
+            $image = Storage::url('blog_images/' . $imageName);
 
             if ($blog->image) {
                 Storage::delete('public\blog_images\\'. $blog->image);
@@ -89,7 +90,7 @@ class BlogController extends Controller
 
         $blog->update([
             'title' => $request->title,
-            'image' => $image ? : $blog->image,
+            'image' => $image ? $image : $blog->image,
             'message' => $request->message,
         ]);
 

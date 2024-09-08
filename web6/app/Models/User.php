@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\BlogComment;
 
 class User extends Authenticatable
 {
@@ -45,8 +46,13 @@ class User extends Authenticatable
         return $this->is_admin;
     }
 
+    public function comments() {
+        return $this->hasMany(BlogComment::class);
+    }
+
     public function isRedactor()
     {
         return $this->is_redactor;
     }
 }
+
