@@ -8,8 +8,7 @@
 
     <div class="middleDiv">
         <div class="form">
-            <form id="form" method="post"
-                  action="{{ route('guestBookUpload.upload') }}">
+            <form id="form" method="post" enctype="multipart/form-data" action="{{ route('guestBookUpload.upload') }}">
                 @csrf
                 <div class="upload">
                     <br><label for="file">Выберите файл</label>

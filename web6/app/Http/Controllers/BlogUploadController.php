@@ -38,9 +38,9 @@ class BlogUploadController extends Controller
             ]);
 
             if (!empty($data['image_base64'])) {
-                $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data['image_base64']));
-                $imageName = time() . '_' . Str::uuid() . '.jpg';
-                $imagePath = public_path('uploads/images/' . $imageName);
+                // $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data['image_base64']));
+                // $imageName = time() . '_' . Str::uuid() . '.jpg';
+                // $imagePath = public_path('uploads/images/' . $imageName);
                 // file_put_contents($imagePath, $imageData);
                 $post->image = $data['image_base64'];
             }

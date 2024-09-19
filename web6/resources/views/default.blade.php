@@ -59,6 +59,10 @@ $user = Auth::user();
                     @if($user == null)
                     <li class="headerPage"><a href="./login">Вход</a></li>
                     @endif
+                    @if($user != null)
+                    <li class="headerPage"><?php echo "ФИО: $user->name"; ?></li>
+                    <li class="headerPage"><a href="./logout">Выход</a></li>
+                    @endif
                 </div>
             </ol>
         </nav>
