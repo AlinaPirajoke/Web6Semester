@@ -50,4 +50,8 @@ Route::middleware(['\App\Http\Middleware\Role::class'])->group(function () {
 });
 });
 
+Route::get('checkUniqueLogin', 'App\Http\Controllers\Api\RegisteredUserController@checkUniqueLogin')->name('checkLogin');
+Route::post('blog/update', 'App\Http\Controllers\Api\BlogController@update')->name('blog.update');
+Route::post('blog/comments', 'App\Http\Controllers\Api\BlogCommentController@store')->name('comment.store');
+
 require __DIR__.'/auth.php';

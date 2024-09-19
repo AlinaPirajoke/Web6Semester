@@ -7,6 +7,7 @@ $user = Auth::user();
 <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/app.css') }}">
     {{-- <LINK REL="img" TYPE="text/css" HREF="{{ HTML::style('css/app.css') }}">--}}
     <title>Рузманов Владислав</title>
